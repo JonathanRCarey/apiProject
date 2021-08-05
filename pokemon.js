@@ -6,16 +6,17 @@ return response.json();
 
 })
 .then(function(json){
-console.log(json)
-let pokemon = json.results;
+console.log(json.moves)
+let moves = json.moves;
 
-for(p in pokemon){
+for(p of moves){
     let listItem = document.createElement('li');
-    listItem.innerHTML = '<p>' + p.name + '</p>';
+    listItem.innerHTML = p.move.name;
     bulbasaurInfo.appendChild(listItem);
-}
+}})
 
-});
+
+
 
 
 
